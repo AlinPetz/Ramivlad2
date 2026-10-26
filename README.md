@@ -1,8 +1,30 @@
 # RAMIVLAD INSTAL — local modernization
 
-Romanian business website, prepared locally for owner review. **Not deployed.** The repository was initially empty; the public site was inspected independently and uses HTML/CSS/JavaScript. This implementation keeps that lightweight stack, adds a Node build tool, and has no production npm dependencies.
+Romanian business website with an automated GitHub Pages build for Ramivlad2. **The existing custom-domain hosting is unchanged.** The local repository was initially empty; the public site was inspected independently and uses HTML/CSS/JavaScript. This implementation keeps that lightweight stack, adds a Node build tool, and has no production npm dependencies.
 
 For current status, completed batches, fresh test results and exact interruption recovery steps, read [DEVELOPMENT_HANDOFF.md](DEVELOPMENT_HANDOFF.md). Business confirmations and deployment blockers are in [reports/HANDOFF.md](reports/HANDOFF.md).
+
+## GitHub Pages — Ramivlad2
+
+The current repository is `https://github.com/AlinPetz/Ramivlad2`. Its workflow `.github/workflows/pages.yml` builds with Node 22, validates the output and deploys **only `dist/`** on pushes to `main` or a manual workflow run. Build and validation need no npm dependencies. Pages supplies `SITE_BASE_PATH` and `SITE_URL`, so links, responsive image paths, metadata and sitemap use the actual repository URL. Build provenance is exposed at `build-info.json`.
+
+Expected URL: `https://alinpetz.github.io/Ramivlad2/`. No custom domain is attached. The previous repository remains a separate Git remote named `previous`; its Pages settings and the existing domain/DNS are unchanged.
+
+If Pages is not active: repository **Settings → Pages → Build and deployment → Source → GitHub Actions**. Then **Actions → Build and deploy website to GitHub Pages → Run workflow → main**. For this task activation is attempted through the authorized GitHub API; inspect the handoff/final result for its verified state. Do not choose branch-root or `/docs` publishing: those paths do not contain the generated site.
+
+To reproduce the Pages build locally in PowerShell:
+
+```powershell
+$env:SITE_BASE_PATH='/Ramivlad2'
+$env:SITE_URL='https://alinpetz.github.io/Ramivlad2'
+npm run build
+npm test
+Remove-Item Env:SITE_BASE_PATH, Env:SITE_URL
+```
+
+The ordinary local preview uses a root-path build; run `npm run build` again after clearing those variables. After deployment, run `node scripts/pages-qa.mjs https://alinpetz.github.io/Ramivlad2/ COMMIT_SHA` to verify the actual published version with installed development tools and Chrome.
+
+GitHub Pages does not apply Apache `.htaccess` or provider-specific `_headers` files. Their policies are supplied for other hosts but must not be described as enforced on Pages. No `CNAME` is added; attaching `ramivladinstal.ro` requires separate owner approval.
 
 The original GitHub history and `img/` assets are preserved. Its standalone HTML pages are archived under `reports/legacy-github/`; the current website is generated from `scripts/build.mjs` into `dist/`. Do not use the archived HTML as the production entry point.
 

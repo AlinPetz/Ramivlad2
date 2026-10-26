@@ -8,7 +8,7 @@ The previous session implemented the site and saved passing QA reports. It was i
 
 ## Current status
 
-Local implementation and recovery verification are complete; ready for owner review. No production deployment is authorized or performed. Business facts remain subject to the confirmations in `reports/HANDOFF.md`. The contact form prepares a local email draft and does not deliver automatically.
+Local implementation and recovery verification are complete. The latest owner request authorizes uploading and deploying the current version to the new Ramivlad2 GitHub Pages site; it does not authorize attaching the existing custom domain, changing DNS, or altering the previous repository's Pages settings. Business facts remain subject to the confirmations in `reports/HANDOFF.md`. The contact form prepares a local email draft and does not deliver automatically.
 
 | Batch | Status |
 |---|---|
@@ -69,3 +69,13 @@ The original tracked `img/` files, including an additional ventilation photo not
 Publication verification passed: fresh build/static checks (13 pages, 336 references), JavaScript syntax checks and 18 browser checks with zero axe violations. A credential-pattern scan checked 182 candidate files with no findings. `dist/`, `node_modules/`, screenshots and temporary/environment files are ignored. The existing preview on port 4173 matched the current build exactly and was reused without stopping its process.
 
 The modernization commit is prepared for a normal push to `origin/main`. To establish the current publication state after any interruption, inspect `git status`, `git log -3`, `git remote -v`, and compare `git rev-parse HEAD` with `git ls-remote origin refs/heads/main` before deciding whether anything remains to push. Never force push. No deployment or hosting change is authorized by this publication task.
+
+## Current publication task — Ramivlad2
+
+This newer request supersedes the destination and deployment restriction of the preceding publication log for the new Pages site only. `origin` now points to `https://github.com/AlinPetz/Ramivlad2.git`; `previous` retains `https://github.com/AlinPetz/ramivlad-site.git`. The new repository was verified public, empty, admin-accessible, with Actions enabled and no Pages configuration. Existing history is retained locally and will be pushed normally to its `main` branch.
+
+Uncommitted work recovered from the interrupted deployment investigation was preserved and completed: `.github/workflows/pages.yml`, base-path-aware `scripts/build.mjs`, and `scripts/check.mjs`. The workflow builds the actual Node-generated `dist/` artifact rather than Jekyll-rendering the source README. `SITE_BASE_PATH` and `SITE_URL` come from Pages configuration; default local/custom-domain output remains unchanged. `.nojekyll` and `build-info.json` are generated for deployment verification. No CNAME is added or domain attached.
+
+Additional changes: `scripts/pages-qa.mjs` verifies the published commit, latest hero, all 12 public pages, responsive menu/layout, images, CSS/JS and homepage axe results at four widths. README documents the workflow, Pages settings, local reproduction and Pages header limitations. Tests passed for both `/Ramivlad2` and root builds: 13 pages and 336 local references plus responsive image variants. Build output, installed dependencies and screenshots remain ignored.
+
+At this checkpoint commit/push, Pages activation, Actions completion and live verification remain to be completed. If interrupted, compare local/remote IDs and inspect the new repository's Actions/Pages status; continue existing runs rather than creating duplicate sites or changing the previous repository. Expected URL: `https://alinpetz.github.io/Ramivlad2/`. No manual action is required if the authorized API activation succeeds.
