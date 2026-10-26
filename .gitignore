@@ -1,0 +1,12 @@
+dist/
+node_modules/
+.env
+.env.*
+!.env.example
+reports/screenshots/
+reports/lighthouse*.html
+.DS_Store
+Thumbs.db
+*.log
+.cache/
+.local-backups/

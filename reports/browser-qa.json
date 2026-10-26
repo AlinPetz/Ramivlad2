@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-26",
+  "results": [
+    {
+      "page": "/",
+      "width": 360,
+      "overflow": false,
+      "axeViolations": 0
+    },
+    {
+      "page": "/",
+      "width": 390,
+      "overflow": false,
+      "axeViolations": 0
+    },
+    {
+      "page": "/",
+      "width": 768,
+      "overflow": false,
+      "axeViolations": 0
+    },
+    {
+      "page": "/",
+      "width": 1024,
+      "overflow": false,
+      "axeViolations": 0
+    },
+    {
+      "page": "/",
+      "width": 1440,
+      "overflow": false,
+      "axeViolations": 0
+    },
+    {
+      "page": "404.html",
+      "width": 390,
+      "axeViolations": 0
+    },
+    {
+      "page": "centrale-si-pompe-de-caldura.html",
+      "width": 390,
+      "axeViolations": 0
+    },
+    {
+      "page": "certificate.html",
+      "width": 390,
+      "axeViolations": 0
+    },
+    {
+      "page": "index.html",
+      "width": 390,
+      "axeViolations": 0
+    },
+    {
+      "page": "instalatii-sanitare.html",
+      "width": 390,
+      "axeViolations": 0
+    },
+    {
+      "page": "instalatii-termice.html",
+      "width": 390,
+      "axeViolations": 0
+    },
+    {
+      "page": "politica-confidentialitate.html",
+      "width": 390,
+      "axeViolations": 0
+    },
+    {
+      "page": "project-1.html",
+      "width": 390,
+      "axeViolations": 0
+    },
+    {
+      "page": "project-2.html",
+      "width": 390,
+      "axeViolations": 0
+    },
+    {
+      "page": "project-3.html",
+      "width": 390,
+      "axeViolations": 0
+    },
+    {
+      "page": "projects.html",
+      "width": 390,
+      "axeViolations": 0
+    },
+    {
+      "page": "reparatii-si-intretinere.html",
+      "width": 390,
+      "axeViolations": 0
+    },
+    {
+      "page": "servicii.html",
+      "width": 390,
+      "axeViolations": 0
+    }
+  ],
+  "consoleErrors": [],
+  "journeys": [
+    "responsive navigation + Escape",
+    "invalid contact blocked",
+    "whitespace blocked",
+    "safe email draft, no submission",
+    "all page images load",
+    "skip link",
+    "404",
+    "405",
+    "security headers"
+  ]
+}
