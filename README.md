@@ -10,7 +10,7 @@ The current repository is `https://github.com/AlinPetz/Ramivlad2`. Its workflow 
 
 Expected URL: `https://alinpetz.github.io/Ramivlad2/`. No custom domain is attached. The previous repository remains a separate Git remote named `previous`; its Pages settings and the existing domain/DNS are unchanged.
 
-If Pages is not active: repository **Settings → Pages → Build and deployment → Source → GitHub Actions**. Then **Actions → Build and deploy website to GitHub Pages → Run workflow → main**. For this task activation is attempted through the authorized GitHub API; inspect the handoff/final result for its verified state. Do not choose branch-root or `/docs` publishing: those paths do not contain the generated site.
+Pages was activated successfully through the authorized GitHub API; no manual activation is needed. If it is disabled in future: repository **Settings → Pages → Build and deployment → Source → GitHub Actions**. Then **Actions → Build and deploy website to GitHub Pages → Run workflow → main**. Do not choose branch-root or `/docs` publishing: those paths do not contain the generated site.
 
 To reproduce the Pages build locally in PowerShell:
 

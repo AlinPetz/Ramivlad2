@@ -1,0 +1,110 @@
+{
+  "url": "https://alinpetz.github.io/Ramivlad2/",
+  "commit": "724eeb3a80dcca1ce4c79a016a6ea9eeb334c54b",
+  "results": [
+    {
+      "url": "https://alinpetz.github.io/Ramivlad2/",
+      "width": 360,
+      "axeViolations": 0
+    },
+    {
+      "url": "https://alinpetz.github.io/Ramivlad2/",
+      "width": 390,
+      "axeViolations": 0
+    },
+    {
+      "url": "https://alinpetz.github.io/Ramivlad2/",
+      "width": 768,
+      "axeViolations": 0
+    },
+    {
+      "url": "https://alinpetz.github.io/Ramivlad2/",
+      "width": 1440,
+      "axeViolations": 0
+    },
+    {
+      "url": "https://alinpetz.github.io/Ramivlad2/",
+      "width": 390,
+      "images": "loaded",
+      "overflow": false
+    },
+    {
+      "url": "https://alinpetz.github.io/Ramivlad2/instalatii-sanitare.html",
+      "width": 390,
+      "images": "loaded",
+      "overflow": false
+    },
+    {
+      "url": "https://alinpetz.github.io/Ramivlad2/instalatii-termice.html",
+      "width": 390,
+      "images": "loaded",
+      "overflow": false
+    },
+    {
+      "url": "https://alinpetz.github.io/Ramivlad2/centrale-si-pompe-de-caldura.html",
+      "width": 390,
+      "images": "loaded",
+      "overflow": false
+    },
+    {
+      "url": "https://alinpetz.github.io/Ramivlad2/reparatii-si-intretinere.html",
+      "width": 390,
+      "images": "loaded",
+      "overflow": false
+    },
+    {
+      "url": "https://alinpetz.github.io/Ramivlad2/servicii.html",
+      "width": 390,
+      "images": "loaded",
+      "overflow": false
+    },
+    {
+      "url": "https://alinpetz.github.io/Ramivlad2/projects.html",
+      "width": 390,
+      "images": "loaded",
+      "overflow": false
+    },
+    {
+      "url": "https://alinpetz.github.io/Ramivlad2/project-1.html",
+      "width": 390,
+      "images": "loaded",
+      "overflow": false
+    },
+    {
+      "url": "https://alinpetz.github.io/Ramivlad2/project-2.html",
+      "width": 390,
+      "images": "loaded",
+      "overflow": false
+    },
+    {
+      "url": "https://alinpetz.github.io/Ramivlad2/project-3.html",
+      "width": 390,
+      "images": "loaded",
+      "overflow": false
+    },
+    {
+      "url": "https://alinpetz.github.io/Ramivlad2/certificate.html",
+      "width": 390,
+      "images": "loaded",
+      "overflow": false
+    },
+    {
+      "url": "https://alinpetz.github.io/Ramivlad2/politica-confidentialitate.html",
+      "width": 390,
+      "images": "loaded",
+      "overflow": false
+    }
+  ],
+  "consoleErrors": [],
+  "checks": [
+    "latest hero design",
+    "12 published pages",
+    "responsive menu",
+    "all images decoded",
+    "CSS/JS fetched",
+    "repository path navigation",
+    "axe on homepage at four widths",
+    "404",
+    "deployment commit"
+  ]
+}
