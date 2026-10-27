@@ -25,6 +25,15 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: '22'
+      - name: Require GitHub Actions publishing source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mode=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq .build_type)
+          if [ "$mode" != "workflow" ]; then
+            echo "::error::Pages source must be GitHub Actions. Open Settings > Pages > Build and deployment > Source > GitHub Actions. Branch publishing serves the README instead of dist."
+            exit 1
+          fi
       - name: Read existing Pages configuration
         id: pages
         uses: actions/configure-pages@v5

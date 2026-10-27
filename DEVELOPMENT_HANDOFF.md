@@ -126,3 +126,8 @@ Missing real assets remain explicit in the premium review: completed sanitary wo
 - Fresh root and /Ramivlad2 production builds and static checks passed: 13 pages, 386 local references. Fresh browser QA passed 18 cases with zero axe violations. Credential-pattern scan checked 202 candidate files with zero findings; ignored build output, dependencies, screenshots, backups and environment files stay excluded.
 - Publish the complete source, self-hosted fonts and licenses, templates, verification tools and design documentation with a descriptive commit; fast-forward main only. Existing Pages workflow builds dist automatically. No custom domain, DNS or previous repository configuration changes.
 - Verify the pushed SHA against origin/main, await Actions completion, then run scripts/pages-qa.mjs against the public URL and expected SHA. No success claim until verified.
+
+
+## Pages source regression repair — 27 October 2026
+
+Owner reported live/local differences. Actual rendered screenshots and authenticated Pages settings confirmed that branch-root Jekyll publishing replaced the Node-built website with README documentation. Restored workflow publishing; added workflow mode guard, exact-prefix preview support, and reusable production parity verification. Root and /Ramivlad2 builds/static tests passed and local root/prefix screenshots match byte-for-byte at 1440 and 390. See reports/PAGES-DEPLOYMENT-REPAIR.md. Commit and push authorized; verify deployed SHA, live parity and all published pages after Actions succeeds. No visual design files changed.
