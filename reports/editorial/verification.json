@@ -1,0 +1,34 @@
+{
+  "contract": "See DESIGN-REFINEMENT.md: a factual, architecture-inspired project folio for installation customers; service/location clarity, authentic photography, verified phone action, explicit local email draft, no new claims, preserved routes/metadata and Pages base paths.",
+  "targetViewports": ["390x844", "768x1024", "1440x1000"],
+  "accessibility": {
+    "status": "pass",
+    "evidence": "Actual local browser suite passed 18 page/viewport checks with zero axe violations and no page errors. Keyboard skip link, mobile menu/Escape, labels, contact validation and safe draft generation were exercised. Final screenshots were inspected; the supplementary tiny mobile tagline was hidden, captions enlarged and the skip-link capture artifact corrected. No full human screen-reader certification is claimed."
+  },
+  "responsive": {
+    "status": "pass",
+    "evidence": "Root inspected matching before/after desktop, tablet and mobile screenshots, plus desktop services/portfolio/contact, tablet portfolio and mobile portfolio/contact. Mobile puts photography before the supporting CTA, service rows remain open, project widths vary deliberately, and controls/long email fit. Automated no-overflow checks passed at 360, 390, 768, 1024 and 1440; the delegated reviewer also probed the menu at 320–850."
+  },
+  "contentStates": {
+    "loading": {"status": "not-applicable", "reason": "The application is static pre-rendered HTML with no asynchronous content state. Photos reserve dimensions, and local fonts use swap. Resource loading was verified with decoded images and document.fonts.ready; Lighthouse measured CLS 0."},
+    "empty": {"status": "not-applicable", "reason": "Services and the three verified projects are fixed build content, not a user-populated or remotely fetched listing that can return empty."},
+    "error": {"status": "pass", "evidence": "Invalid contact data and whitespace-only descriptions were rejected in browser regression. The invalid form state was captured in screenshots/form-invalid.png. Existing copy fallback text and native validity mechanisms remain in place."},
+    "partial": {"status": "not-applicable", "reason": "There is no partial remote dataset or paginated application response. All available project photographs were preserved; missing project metadata and new photography are documented instead of invented."},
+    "success": {"status": "pass", "evidence": "Valid test input generated a visible textarea draft and encoded mailto link without a POST. Root inspected screenshots/form-draft.png, including the explicit statement that nothing has been sent and the next email/copy actions."},
+    "permission": {"status": "not-applicable", "reason": "The public static site has no login, gated data or application permission screen. No email app was launched, no real request sent, and no push/deployment was performed."}
+  },
+  "renderedEvidence": [
+    {"viewport": "390x844", "artifact": "screenshots/comparison-mobile.png", "observation": "Root inspected this actual live-before/local-after comparison. The new mobile composition shows literal services and a full image before the contact action; the old persistent bar is absent and the service heading spacing is corrected."},
+    {"viewport": "768x1024", "artifact": "screenshots/after-tablet-viewport.png", "observation": "Root inspected tablet viewport and portfolio-section captures. Header/menu, two-scale photography, captions and service introduction fit; portfolio remains asymmetric without horizontal overflow."},
+    {"viewport": "1440x1000", "artifact": "screenshots/comparison-desktop.png", "observation": "Root inspected the actual desktop before/after composition and the full service, portfolio and contact sections. Open service rows replace card boxes, image plates vary in size and the phone/form remain clear."}
+  ],
+  "tests": {
+    "static": "PASS: root and /Ramivlad2 production builds; 13 pages, 364 local links/assets plus responsive variants.",
+    "browser": "PASS: 18 page/viewport checks; zero axe violations; contact validation/draft, images, navigation, skip link, 404/405, HEAD, security headers and caching.",
+    "lighthouseMobile": {
+      "homepage": {"performance": 99, "accessibility": 100, "bestPractices": 100, "seo": 100, "lcp": "2.0 s", "tbt": "0 ms", "cls": 0},
+      "heating": {"performance": 100, "accessibility": 100, "bestPractices": 100, "seo": 100, "lcp": "1.4 s", "tbt": "0 ms", "cls": 0}
+    },
+    "limits": "Local lab results; no field INP, new production deployment, human screen-reader study or conversion uplift measurement. Initial concurrent-browser Lighthouse run scored homepage 95; final sequential run after corrections scored 99."
+  }
+}

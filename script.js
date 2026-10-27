@@ -6,7 +6,7 @@ if (toggle && navigation) {
     const open = toggle.getAttribute('aria-expanded') !== 'true';
     toggle.setAttribute('aria-expanded', String(open));
     navigation.classList.toggle('open', open);
-    toggle.textContent = open ? 'Închide meniul' : 'Meniu';
+    toggle.textContent = open ? 'Închide' : 'Meniu';
   });
   navigation.addEventListener('click', e => { if (e.target.closest('a')) closeMenu(); });
   document.addEventListener('keydown', e => { if(e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { closeMenu(); toggle.focus(); } });

@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFile,readdir,stat} from 'node:fs/promises';
 import path from 'node:path';
+import {imageDimensions} from './content/image-dimensions.mjs';
 const pages=(await readdir('dist')).filter(f=>f.endsWith('.html'));
 const titles=new Set(); let links=0;
 const basePath=(process.env.SITE_BASE_PATH || '').replace(/\/$/,'');
@@ -13,6 +14,10 @@ for(const file of pages){
  const schema=JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
  assert.equal(schema['@context'],'https://schema.org');
  assert(!JSON.stringify(schema).match(/aggregateRating|review|openingHours|address/),'Unverified business properties');
+ for(const match of html.matchAll(/<img src="[^"]*\/assets\/(project-\d-\d+)\.jpeg" width="(\d+)" height="(\d+)"/g)){
+  assert.equal(Number(match[2]),imageDimensions[match[1]].width,`${file}: wrong image width`);
+  assert.equal(Number(match[3]),imageDimensions[match[1]].height,`${file}: wrong image height`);
+ }
  for(const m of html.matchAll(/(?:href|src)="([^"?]+)"/g)){
   const href=m[1]; if(/^(https?:|tel:|mailto:)/.test(href)) continue;
   let [url,anchor]=href.split('#');
@@ -22,9 +27,19 @@ for(const file of pages){
   if(anchor&&target.endsWith('.html')) assert((await readFile(target,'utf8')).includes(`id="${anchor}"`),`${file}: missing anchor ${href}`);
   links++;
  }
- for(const match of html.matchAll(/srcset="([^"]+)"/g))for(const entry of match[1].split(',')){
+ for(const match of html.matchAll(/srcset="([^"]+)"/g)){
+ const descriptors=match[1].split(',').map(entry=>entry.trim().split(/\s+/)[1]);
+ assert.equal(new Set(descriptors).size,descriptors.length,`${file}: duplicate responsive width`);
+ for(const entry of match[1].split(',')){
   let asset=entry.trim().split(/\s+/)[0];if(basePath){assert(asset.startsWith(basePath+'/'));asset=asset.slice(basePath.length);}
   assert((await stat(path.join('dist',asset))).isFile(),`${file}: missing responsive image ${asset}`);
+ }
+ }
+ if(/^project-[123]\.html$/.test(file)){
+  const id=Number(file.match(/project-(\d)/)[1]);
+  const originals=[...html.matchAll(/href="[^"]*\/assets\/(project-\d-\d+)\.jpeg"/g)].map(match=>match[1]);
+  assert.equal(new Set(originals).size,[10,7,8][id-1],`${file}: original photos missing`);
+  assert.equal(originals.length,new Set(originals).size,`${file}: duplicate original photo`);
  }
 }
 assert(!(await readdir('dist/assets')).some(f=>f.endsWith('.html')),'Legacy HTML leaked to assets');

@@ -1,0 +1,103 @@
+{
+  "contract": "Premium architectural/engineering redesign of the actual local RAMIVLAD INSTAL site: a new photo-led homepage, substantive service/project page compositions, verified Romanian scope, direct phone contact and explicit email drafting; all original routes, business facts, SEO and Pages base-path support retained. See README.md.",
+  "targetViewports": [
+    "1440x1000",
+    "768x1024",
+    "390x844"
+  ],
+  "accessibility": {
+    "status": "pass",
+    "evidence": "18 local browser page/viewport checks passed with zero axe violations and no page errors. Menu/Escape, skip link, labels, invalid contact and whitespace validation, draft-without-POST, images and HTTP behavior were exercised. Manual screenshot review included the dark contact and draft states. This is not full human screen-reader certification."
+  },
+  "responsive": {
+    "status": "pass",
+    "evidence": "Before, pass1 and refined captures cover all 12 public pages at 1440, 768 and 390 widths. Root inspected full homepage captures at all three sizes and service/portfolio/gallery/certificate/privacy page captures; a delegated reviewer inspected eight additional page/viewport combinations and menu widths 320–850. Regression widths 360/390/768/1024/1440 had no horizontal overflow. Mobile line-break spacing and intrinsic gallery image sizing were corrected."
+  },
+  "contentStates": {
+    "loading": {
+      "status": "not-applicable",
+      "reason": "No application data-loading state exists: pages are pre-rendered. Native image/font loading is handled with reserved intrinsic image dimensions, responsive sources and font swap/preloads. Dimensions/descriptor correctness were tested; local Lighthouse CLS was 0 on measured pages. No separate slow-gallery field test is claimed."
+    },
+    "empty": {
+      "status": "not-applicable",
+      "reason": "Service/project data is fixed source content, not an empty user account or asynchronous listing. All three verified galleries remain complete."
+    },
+    "error": {
+      "status": "pass",
+      "evidence": "Browser tests rejected invalid contact information and whitespace-only descriptions. The actual invalid state was captured in screenshots/form-invalid.png. The local missing-page journey returned 404."
+    },
+    "partial": {
+      "status": "not-applicable",
+      "reason": "There is no partial API dataset. Missing authentic sanitary/staff imagery and unverified project metadata are documented as asset requests; no invented replacements or specifications are displayed."
+    },
+    "success": {
+      "status": "pass",
+      "evidence": "Root inspected screenshots/form-draft.png in the new dark contact design. Valid input produced a visible draft, encoded email link and copy action, with explicit unsent wording and no POST. No email application was launched."
+    },
+    "permission": {
+      "status": "not-applicable",
+      "reason": "The website is public static content without account permissions. The separate owner boundary was respected: no push, production deployment or DNS action occurred."
+    }
+  },
+  "renderedEvidence": [
+    {
+      "viewport": "1440x1000",
+      "artifact": "screenshots/after-desktop-index.png",
+      "observation": "Actual complete desktop page inspected, including heating-system opening, differentiated service spread, project overview/detail pairs, company information and dark contact ending; supporting page captures were also inspected."
+    },
+    {
+      "viewport": "768x1024",
+      "artifact": "screenshots/after-tablet-index.png",
+      "observation": "Actual complete tablet page inspected. Navigation, photographic proportions, service columns, portfolio rows and contact form remain composed without overflow."
+    },
+    {
+      "viewport": "390x844",
+      "artifact": "screenshots/after-mobile-index.png",
+      "observation": "Actual complete mobile page and readable section captures inspected. The layout has deliberate image/text ordering, usable phone/menu controls, corrected heading spaces and no fixed overlay crossing photographs."
+    },
+    {
+      "viewport": "390x844",
+      "artifact": "screenshots/form-draft.png",
+      "observation": "Actual draft state inspected: readable light text, visible textarea, explicit no-send explanation and clear email/copy actions."
+    }
+  ],
+  "checks": {
+    "static": "Root and /Ramivlad2 production builds passed: 13 pages, 386 local references plus responsive variants. Exact intrinsic dimensions, unique srcset descriptors and all 25 original gallery links checked.",
+    "browser": "18 checks passed; zero axe violations and page errors.",
+    "mobileLighthouse": [
+      {
+        "page": "/",
+        "scores": {
+          "performance": 99,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "metrics": {
+          "first-contentful-paint": "1.2 s",
+          "largest-contentful-paint": "1.9 s",
+          "total-blocking-time": "100 ms",
+          "cumulative-layout-shift": "0",
+          "speed-index": "1.2 s"
+        }
+      },
+      {
+        "page": "/instalatii-termice.html",
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "metrics": {
+          "first-contentful-paint": "0.9 s",
+          "largest-contentful-paint": "1.9 s",
+          "total-blocking-time": "0 ms",
+          "cumulative-layout-shift": "0",
+          "speed-index": "0.9 s"
+        }
+      }
+    ],
+    "limits": "Local lab results only; no production deployment, field INP, human user study or conversion-uplift measurement."
+  }
+}

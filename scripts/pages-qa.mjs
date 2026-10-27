@@ -21,7 +21,7 @@ async function images(){await page.evaluate(async()=>{for(const i of document.im
 try{
  for(const width of [360,390,768,1440]){
   await page.setViewportSize({width,height:900});const response=await page.goto(base.href);assert.equal(response.status(),200);
-  assert.match(await page.title(),/Instalații sanitare și termice/);assert.match(await page.locator('h1').innerText(),/Confort, zi de zi\./);
+  assert.match(await page.title(),/Instalații sanitare și termice/);assert.match(await page.locator('h1').innerText(),/Instalații sanitare/);assert.match(await page.locator('h1').innerText(),/termice/);
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Horizontal overflow');
   await images();
   if(width<850){await page.getByRole('button',{name:'Meniu',exact:true}).click();await page.keyboard.press('Escape');assert.equal(await page.locator('.menu-toggle').getAttribute('aria-expanded'),'false');}

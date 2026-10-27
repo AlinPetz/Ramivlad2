@@ -1,6 +1,6 @@
 # Development handoff — RAMIVLAD INSTAL
 
-Last updated: 26 October 2026. Current branch: `main` (based on the existing GitHub default branch).
+Last updated: 27 October 2026. Current local branch: `codex/premium-redesign` (based on published `main` at `8bba6a9`, preserving the earlier local work).
 
 ## Recovery checkpoint
 
@@ -8,7 +8,7 @@ The previous session implemented the site and saved passing QA reports. It was i
 
 ## Current status
 
-Local implementation and recovery verification are complete. The latest owner request authorizes uploading and deploying the current version to the new Ramivlad2 GitHub Pages site; it does not authorize attaching the existing custom domain, changing DNS, or altering the previous repository's Pages settings. Business facts remain subject to the confirmations in `reports/HANDOFF.md`. The contact form prepares a local email draft and does not deliver automatically.
+The premium redesign supersedes the earlier incremental editorial refinement. On 27 October 2026 the owner explicitly authorized uploading the latest version to Ramivlad2. Publication proceeds to main through the existing GitHub Pages workflow after fresh verification. Business facts remain subject to confirmations in `reports/HANDOFF.md`. The contact form prepares a local email draft and does not deliver automatically.
 
 | Batch | Status |
 |---|---|
@@ -83,3 +83,46 @@ Publication completed: website/workflow commit `724eeb3a80dcca1ce4c79a016a6ea9ee
 Live verification at `https://alinpetz.github.io/Ramivlad2/` confirmed `build-info.json` matched that commit and `/Ramivlad2` base path. `scripts/pages-qa.mjs` passed 16 page/viewport cases: newest hero/design, all 12 public pages, every page's images decoded, styles and JS fetched, navigation stayed under the repository path, mobile layouts had no overflow, homepage axe checks found zero violations at 360/390/768/1440 widths, no page script errors and an unknown URL returned 404. Evidence: `reports/pages-qa.json`; screenshots are local/ignored under `reports/screenshots/pages-*.png`.
 
 The old repository's remote main remains `96e28de7853888b377751f3bd30da22bc33201da`, and its Pages settings match the read-only baseline. This new site needs no manual activation. Subsequent documentation-only commits also trigger the workflow; use live `build-info.json`, current Actions status and `git ls-remote origin refs/heads/main` for the latest deployed SHA. Do not reattach the old domain or change the previous repository when resuming.
+
+## Editorial refinement — previous local-only task
+
+Completed: actual live-before screenshots at desktop/tablet/mobile, 15-point audit, three differentiated directions and selection of **Dosar de lucrări**, plus implementation and final rendered inspection. Full rationale, directions, verified observations and missing material are in `reports/editorial/DESIGN-REFINEMENT.md`. Evidence and measured results: `reports/editorial/verification.json`.
+
+Design decisions: self-hosted Manrope with Romanian Latin-ext support; chalk/graphite with existing restrained blue; literal service heading; dominant authentic installation photograph and smaller equipment detail; open service index; varied project plates with verified scope captions; simpler header and explicit phone/email contact; no fixed mobile contact strip, card repetition, gradients or decorative motion. No photographs or business claims were invented.
+
+Files changed: `styles.css`, `scripts/build.mjs`, `scripts/serve.mjs` (WOFF2 MIME), `scripts/pages-qa.mjs` (new headline assertion), `.gitignore`, performance reports and this handoff. Added `scripts/content/home.mjs`, `scripts/content/contact.mjs`, `scripts/editorial-capture.mjs`, the two WOFF2 subsets and OFL license under `assets/fonts/`, and the editorial audit/evidence files. Routing, structured data, metadata generation, Pages workflow and contact validation/draft logic are preserved.
+
+Final verification: root and `/Ramivlad2` builds pass; 13 pages and 364 local links/assets plus responsive variants pass. Browser suite: 18 page/viewport checks, zero axe violations or page errors, form/keyboard/menu/image/HTTP checks pass. Mobile Lighthouse: homepage 99/100/100/100 (LCP 2.0 s); heating page 100/100/100/100 (LCP 1.4 s); both TBT 0 ms and CLS 0. Local lab measurements do not establish real-user INP or conversion changes.
+
+Three real Codex subagents ran using ECC guidance: `editorial_audit`, `copy_architecture`, `editorial_review`. Review found no blocking defects; small-label and heading-spacing observations were corrected. Root actually inspected before/after viewport comparisons and service/portfolio/contact screenshots across desktop/tablet/mobile. The form draft state was inspected without launching an email app or sending a message.
+
+Review artifacts are local and ignored: `reports/editorial/screenshots/comparison-desktop.png`, `comparison-tablet.png`, `comparison-mobile.png`, full-page before/after files and per-section captures. Reproduce after captures with `node scripts/editorial-capture.mjs` while the local server runs. Start preview with `npm run build` then `npm run dev`, opening `http://127.0.0.1:4173`. The owned QA server is stopped at final teardown.
+
+Next action: owner reviews the local design and approves any push/deployment separately. Do not push this branch or main based on earlier publishing instructions. Missing real material remains: completed sanitary-installation photos, installer-at-work photos, verified project details, resolved phone/address roles and certificate validity. Preserve the actual assets and factual limitations; do not fabricate replacements.
+
+## Premium redesign — current local-only task
+
+The user rejected an incremental refinement and authorized a substantial new composition. The prior working version was preserved in `.local-backups/editorial-before-premium.zip` before restructuring. Current branch: `codex/premium-redesign`. No commit/push/deployment was performed for this task.
+
+Completed work: a new installation-system hero; stronger Archivo display/Manrope body hierarchy; photographic service spreads and differentiated sanitary/repair treatment; real overview/detail project entries; a deliberate dark contact ending; redesigned service leads and contact briefs; project scope/overview pages and complete galleries with varied desktop compositions and natural mobile photo proportions. Navigation, important URLs, metadata/schema, verified business details and the explicit email-draft flow are retained. Certificate captions identify the actual photographed documents without asserting current authorization.
+
+New/changed implementation files include `styles.css`, `script.js`, `scripts/build.mjs`, `scripts/check.mjs`, `scripts/pages-qa.mjs`, `scripts/content/home.mjs`, `contact.mjs`, new `detail.mjs` and `image-dimensions.mjs`, `scripts/premium-capture.mjs`, font assets/licenses and report/ignore updates. Self-hosted Archivo instances were reduced to 27,524 bytes; all four font subsets total 67,480 bytes. No runtime font service or production npm dependency was added.
+
+Visual process: captured all 12 public pages at 1440×1000, 768×1024 and 390×844 before work, after the first pass, and after refinements. Root inspected complete homepage captures at all three sizes plus service, portfolio, gallery, contact, certificate and privacy captures; the delegated reviewer inspected eight supporting-page combinations. Corrected mobile word joins, over-wide service crops, incorrect shared image aspect hints and duplicate/incorrect srcset widths. Final comparison and form-state captures were inspected. Review file: `reports/premium/README.md`; structured evidence: `reports/premium/verification.json`.
+
+Final checks: both root and `/Ramivlad2` builds pass; 13 pages and 386 local references plus responsive variants pass; all 25 original gallery photographs are accessible exactly once on the respective project pages. Browser suite: 18 page/viewport cases, zero axe violations and no page errors; validation, local draft, navigation, images, HTTP/header checks pass. Mobile Lighthouse: homepage 99/100/100/100 (LCP 1.9 s, TBT 100 ms, CLS 0); heating page 100/100/100/100 (LCP 1.9 s, TBT 0 ms, CLS 0). These are local lab results, not field INP or conversion measurements.
+
+Agents actually run: `premium_critique` used ECC architect/design guidance; `premium_page_templates` implemented the service/project module; `premium_render_review` inspected rendered supporting pages and source with ECC accessibility/review guidance. Its intrinsic-image-dimensions finding was fixed and covered by source checks. Dedicated ECC executables were not claimed.
+
+Resume/preview: read this section and the premium review/evidence files, inspect `git status`, preserve all current uncommitted work, then run `npm run build`, `npm test`, `npm run dev`. Open `http://127.0.0.1:4173/`. Reproduce full captures with `node scripts/premium-capture.mjs after`; browser checks with `node scripts/browser-qa.mjs`. Screenshots and the prior-version backup are local/ignored. The owned QA preview server is stopped at teardown. Push/deployment requires new approval; do not reuse earlier publication authorization.
+
+Missing real assets remain explicit in the premium review: completed sanitary work, wide finished-system photographs, real installers at work and owner-approved project facts. Phone/address roles and document validity still need owner confirmation. No stock project imagery, testimonials, certifications, project dates or performance claims were invented.
+
+
+## Latest version publication — 27 October 2026
+
+- Owner authorized uploading the complete latest local premium redesign to the existing Ramivlad2 repository. Previous repository remote remains preserved.
+- Fetched origin; remote main matches the redesign base at 8bba6a9, with no newer remote work to integrate.
+- Fresh root and /Ramivlad2 production builds and static checks passed: 13 pages, 386 local references. Fresh browser QA passed 18 cases with zero axe violations. Credential-pattern scan checked 202 candidate files with zero findings; ignored build output, dependencies, screenshots, backups and environment files stay excluded.
+- Publish the complete source, self-hosted fonts and licenses, templates, verification tools and design documentation with a descriptive commit; fast-forward main only. Existing Pages workflow builds dist automatically. No custom domain, DNS or previous repository configuration changes.
+- Verify the pushed SHA against origin/main, await Actions completion, then run scripts/pages-qa.mjs against the public URL and expected SHA. No success claim until verified.

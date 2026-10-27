@@ -4,10 +4,10 @@ Measured locally on 26 October 2026 against `http://127.0.0.1:4173`. Lighthouse 
 
 | Page | Performance | Accessibility | Best practices | SEO | LCP | TBT | CLS |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| Homepage `/` | 100 | 100 | 100 | 100 | 1.7 s | 0 ms | 0 |
-| Heating `/instalatii-termice.html` | 100 | 100 | 100 | 100 | 0.9 s | 0 ms | 0 |
+| Homepage `/` | 99 | 100 | 100 | 100 | 1.9 s | 100 ms | 0 |
+| Heating `/instalatii-termice.html` | 100 | 100 | 100 | 100 | 1.9 s | 0 ms | 0 |
 
-The resumed session refreshed both runs. FCP and Speed Index were 1.1 s on the homepage and 0.8 s on the heating page. The final run meets the requested score targets and local LCP/CLS goals. Lighthouse still identifies diagnostic opportunities in image delivery, render blocking, dependency chains, caching and maximum potential input delay. Some are affected by local server settings and machine load; production headers/compression and delivery must be verified on the actual host. A 100 score does not mean every diagnostic is perfect.
+These are the final local premium-redesign measurements on `codex/premium-redesign`, not a new production deployment. FCP and Speed Index were 1.2 s on the homepage and 0.9 s on the heating page. Both meet the requested score targets and local LCP/CLS goals. Four self-hosted font subsets total 67,480 bytes, with the display fonts instanced to avoid downloading unused variable axes. All project photographs now have exact intrinsic size hints and responsive-width descriptors, particularly for natural-height mobile galleries. Lighthouse still identifies diagnostic opportunities in image delivery, render blocking, dependency chains and caching. Production delivery must be measured after an approved deployment. A high score does not mean every diagnostic is perfect.
 
 No field INP data is available before production traffic. TBT is a lab responsiveness metric and is not reported as INP. No CrUX/Search Console field measurements or real device cellular tests were available.
 

@@ -10,3 +10,6 @@ Thumbs.db
 *.log
 .cache/
 .local-backups/
+reports/editorial/screenshots/
+reports/editorial/contact-sheet.jpg
+reports/premium/screenshots/
